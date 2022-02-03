@@ -16,11 +16,11 @@
 |---------------| --------------
 |Code name | _On the Streets_ |
 |Project title| Homelessness & Homeless Shelter in the U.S. over Time |
-|Authors | Emily Olshan (eolshan@uw.edu), Samira, Rebecca, Dinah |
+|Authors | Emily Olshan (eolshan@uw.edu), Samira Shirazy (samira03@uw.edu), Rebecca Chan (rchan2@uw.edu), Dinah Bahta (dbahta2@uw.edu) |
 |Affiliation |  INFO-201: Technical Foundations of Informatics - The Information School - University of Washington |
 |Date | Winter 2022|
 |Abstract | No more than three sentences that summarize your project. Focus on the very most important aspects. For example: **(1)** "Our main question is .... This question is important because .... To address the question, we will ...." **(2)** "We are concerned with ..., becuase .... To address this concern, we plan to ...." **(3)** "Consider that ....  This is important because .... Accordingly, we plan to ...."   |
-|Keywords | homeless, poverty, class |
+|Keywords | homeless, poverty, class, youth & family |
 |1.0 Introduction | Briefly introduce your project. (about 150 words) |
 |2.0 Design Situation | Use short sub-sections to describe your topic and the setting (that is, the sociotechnical situation), including project framing, human values, direct and indirect stakeholders, possible harms and benefits. See the Design Brief, section B.3. **Note**: You *must* include three citations to related work (URLs to similar work, high quality articles from the popular press, reseach papers, etc. ). You may find it helpful to include a figure.  (about 400 words) |
 |3.0 Research questions | 3-5 research questions. What motivates the questions? Why are they important? See the Deign Brief, section B.4. (about 150 words) |
