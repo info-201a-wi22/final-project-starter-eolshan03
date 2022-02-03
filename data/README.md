@@ -6,7 +6,7 @@ In our project, we use the following data files and Application Programming Inte
 |Data File Name | Brief Description|
 |---------------| -----------------|
 |[example.cvs](./example.csv) | This file contains temperature data. (See report for details.)
-|[homelessness_count_usa.csv](./homelessness_count_usa.csv) | Homelessness point in time data for the years 2014 and 2015, by county in the US and for a variety of differnt attributes.
+|[homelessness-2007-2016.csv](./homelessness-2007-2016.csv) | Homelessness point in time data for the years 2007 to 2016, by county (or CoC) in the US and for a variety of different attributes.
 
 ### Application Programming Interfaces (API) (TODO: Update/delete)
 
