@@ -1,4 +1,4 @@
-# The `\data` Directory: Project Data Summary 
+# The `\data` Directory: Project Data Summary
 
 In our project, we use the following data files and Application Programming Interfaces:
 
@@ -6,7 +6,7 @@ In our project, we use the following data files and Application Programming Inte
 |Data File Name | Brief Description|
 |---------------| -----------------|
 |[example.cvs](./example.csv) | This file contains temperature data. (See report for details.)
-|[another-file](./filename2.csv) | Description ... 
+|[homelessness-2007-2016.csv](./homelessness-2007-2016.csv) | Homelessness point in time data for the years 2007 to 2016, by county (or CoC) in the US and for a variety of different attributes.
 
 ### Application Programming Interfaces (API) (TODO: Update/delete)
 
@@ -21,6 +21,6 @@ Sellers lists and the books that have been reviewed in the New York Times. An ov
 * See examples above.
 
 # NOTE 2:  Clear and Concise Documentation
-* Please remember your audience (prospective employers, open source colleagues, TAs, Instructors). Therefore, 
+* Please remember your audience (prospective employers, open source colleagues, TAs, Instructors). Therefore,
 aim for clarity and conciseness.
 * When done, be sure to delete these NOTE sections and the example CSV file (which are intended for you, of course, not your audience!)
