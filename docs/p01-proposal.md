@@ -38,9 +38,11 @@ This data covers a large group of people whose situations are often changing and
 ## Acknowledgements  
 We would like to thank our professor, David G Hendry for giving us the freedom to choose our own topic of interest to research. We would also like to give thanks to our teaching Assistant, Meher Singh Seera for introducing us to the project and helping with our initial research. Lasty, we'd like to thank the contributors in the Homelessness data set for giving us data to base our report on.  
 ## References  
-1. Appelbaum, B. (2020, May 15). America's cities could house everyone if they chose to. The New York Times. Retrieved February 4, 2022, from https://www.nytimes.com/2020/05/15/opinion/sunday/homeless-crisis-affordable-housing-cities.html
-2. Communities, A. C. B. (2021, July 13). 6 ways affordable housing can boost local economies. CommonBond Communities. Retrieved February 4, 2022, from https://commonbond.org/economic-benefits-of-affordable-housing/
-3. Constant, P. (2021, November 27). Why mental health and social services are as crucial as physical shelter to address the homelessness crisis. Business Insider. Retrieved February 3, 2022, from https://www.businessinsider.com/how-to-fix-america-homelessness-crisis-pitchfork-economics-2021-11
-4. HUD. (n.d.). About Page. HUD Exchange. Retrieved February 4, 2022, from https://www.hudexchange.info/about/ HUD. (n.d.). Continuum of Care (COC) program.
-5. HUD Exchange. Retrieved February 4, 2022, from https://www.hudexchange.info/programs/coc/ Love(X):, D. (2017, August 7). Homelessness.
-6. Kaggle. Retrieved February 3, 2022, from https://www.kaggle.com/adamschroeder/homelessness/version/5?select=Population-by-state.csv
+1. Appelbaum, Binyamin. “America's Cities Could House Everyone If They Chose To.” The New York Times, A.G. Sulzberger, 15 May 2020, https://www.nytimes.com/2020/05/15/opinion/sunday/homeless-crisis-affordable-housing-cities.html.
+2. Communities, Author: CommonBond. “6 Ways Affordable Housing Can Boost Local Economies.” CommonBond Communities, 13 July 2021, https://commonbond.org/economic-benefits-of-affordable-housing/. 
+3. Constant, Paul. “Why Mental Health and Social Services Are as Crucial as Physical Shelter to Address the Homelessness Crisis.” Business Insider, Business Insider, 27 Nov. 2021, https://www.businessinsider.com/how-to-fix-america-homelessness-crisis-pitchfork-economics-2021-11.
+4. Exchange, HUD. “Homelessness Count - USA: Anchorage Open Data.” Municipality of Anchorage Open Data, 8 Feb. 2017, https://data.muni.org/Housing-and-Homelessness/Homelessness-Count-USA/vrsm-k79r.
+5. HUD. “About Page.” HUD Exchange, n.d., https://www.hudexchange.info/about/.
+6. HUD. “Continuum of Care (COC) Program.” HUD Exchange, n.d., https://www.hudexchange.info/programs/coc/.
+7. Lavery, Diana. “Point in Time Counts of Homeless Populations by Continuum of Care (CoC) Area.” Georgia COVID-19 Data Hub, 18 Mar. 2019, https://covid-hub.gio.georgia.gov/datasets/73ef2a56092440df9f462566c7e13a93/explore?location=5.624827%2C0.315564%2C1.88&amp;showTable=true.
+8. Love(X):, Def. “Homelessness.” Kaggle, 7 Aug. 2017, https://www.kaggle.com/adamschroeder/homelessness/version/5?select=Population-by-state.csv.
