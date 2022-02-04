@@ -58,9 +58,8 @@ The motivation for these questions is help better understand the trends of homel
 |6.0 Limitations | This data covers a large group of people whose situations are often changing and it is recorded by a variety of individuals. This leads to some limitations on the accuracy of the data, as it isn’t necessarily consistently recorded and accounted for. This indicates that there may be some errors in our analyses, however they likely aren’t huge limitations. In addition, there is relatively limited categories of individuals who are homeless. For example, we can investigate categories, such as sheltered or chronic homelessness, but we cannot look at factors such as a specific location or background. This means that although we are looking for trends, we may not be able to see the true reasoning behind some of the trends, if they are impacted by factors that are not available to us. We are only looking at correlations of the data, but may not be able to discover the truth behind the trends of which individuals are likely to need support. |
 <<<<<<< HEAD
 |Acknowledgements | We would like to thank our professor, David G Hendry for giving us the freedom to choose our own topic of interest to research. We would also like to give thanks to our teaching Assistant, Meher Singh Seera for introducing us to the project and helping with our initial research. Lasty, we'd like to thank the contributors in the Homelessness data set for giving us data to base our report on.|
-=======
->>>>>>> 80964188a5aa7a0d64de57e2ae7394689344621e
-|Acknowledgements | Is there anyone you would like to thank? A librarian who helped you with your research? A Teaching Assistant? A friend who helped you find your data? Say thank you in this section.|
->>>>>>> 2ad5b53ba6eb7b9e0b2a2f99b58c8a370d0d44fd
 |References | Include citations to your three references. See 2.0 Introduction. If you like, you can cite more than three references.  Please use a standard citation style of your choice.  See [Citing Sources](https://guides.lib.uw.edu/research/citations) at the UW Library. |
 |Appendix A: Questions| Do you have questions for your TA or instructor?  Include them here.|
+=======
+>>>>>>> 80964188a5aa7a0d64de57e2ae7394689344621e
+>>>>>>> 2ad5b53ba6eb7b9e0b2a2f99b58c8a370d0d44fd
