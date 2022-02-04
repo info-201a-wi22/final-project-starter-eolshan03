@@ -14,9 +14,9 @@
 
 |Element | Brief Description|
 |---------------| --------------
-|Code name | Give your project a _code name_, a short, evocative name for efficiently referring to your project. Your code name does not change! Examples: _Jazz-4_, _Rocking Fish_, etc. |
-|Project title| Give your project a concise, interesting title that summarizes the entirety of your project. (Your title can change on subsequent deliverables.) |
-|Authors | Names of your team members and contact information (email addresses). |
+|Code name |_On the Streets_|
+|Project title| Sheltered and Unsheltered Homeless in the U.S. over Time |
+|Authors | Emily Olshan (eolshan@uw.edu), Samira Shirazy (samira03@uw.edu), Rebecca Chan (rchan2@uw.edu), Dinah Bahta (dbahta2@uw.edu) |
 |Affiliation |  INFO-201: Technical Foundations of Informatics - The Information School - University of Washington |
 |Date | Winter 2022|
 |Abstract | We are concerned with how the number of homeless varies by year and region and how certain groups are more likely to be homeless. To address this concern, we plan to analyze our datasets to find trends in who is most likely to end up homeless and find other factors that influence homelessness rates. We hope that by identifying these trends, we can gain a better idea of which groups need help and how to best help them. |
