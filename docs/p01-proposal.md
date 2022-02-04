@@ -20,9 +20,10 @@ The direct stakeholders for this homeless crisis are the federal government and 
 ### Harms and Benefits  
 If interventions are taken using data and technology the possible benefits are creating a healthier economy. As mentioned by _common bond communities_, "when people have access to quality affordable housing options, they are far less likely to face environmental threats, and far more likely to have enough income for healthy food options and routine medical care—ultimately helping them lower the risk of severe chronic health problems." By building these houses, the community can use the funding to build a better community.  
 ## 3.0 Research Questions  
-1. How does the percentage of each homelessness category (unsheltered vs sheltered) change in each state from 2007 to 2016? This question will be answered by calculating the total amount of homeless people in a state. Then, calculating the total amount of homeless people within the unsheltered and sheltered categories. Finding the percent will be taking the unsheltered/sheltered value over the total value. This process will be repeated for each state in each year. 
+1. How does the percentage of each homelessness category (unsheltered vs sheltered) change in each state from 2007 to 2016? This question will be answered by calculating the total amount of homeless people in a state. Then, calculating the total amount of homeless people within the unsheltered and sheltered categories. Finding the percent will be taking the unsheltered/sheltered value over the total value. This process will be repeated for each state in each year.
 2. How can this dataset become a foundational skill to change this homeless crisis?
-3. What are the trends in homeless populations by the state in regards to families vs. individuals? What groups of people (age, veterans, families, etc) are most likely to be sheltered vs unsheltered?
+3. What are the trends in homeless populations by the state in regards to families vs. individuals?
+4. What groups of people (age, veterans, families, etc) are most likely to be sheltered vs unsheltered?
 
 The motivation for these questions is help better understand the trends of homeless populations over the years and find solutions to combat this issue. These questions will also allow us to gain more information about the homeless crisis and how it affects one's daily life.  
 ## 4.0 The Dataset  
