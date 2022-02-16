@@ -1,5 +1,6 @@
 library(dplyr)
 library(tidyr)
+library(stringr)
 
 # load and organize data for merge
 # from Georgia Geospacial Information Office - unfinished
@@ -9,10 +10,14 @@ set_1 <- read.csv("data/pit-homeless-by-coc.csv", stringsAsFactors = FALSE) %>%
          coc_cat = COCCAT,
          ) %>%
   gather(key = attribute,
-         value = value,
-         -coc_name, -coc_num, -coc_cat
-         )
-
+         value = "value",
+         -coc_name, -coc_num, -coc_cat, -OBJECTID, -Merger_flag, -COCNAME,
+         -SHAPE_Length, -SHAPE_Area
+         ) %>%
+  mutate(year = paste0("20", str_sub(attribute, -2)),
+         state = str_sub(coc_num, 1, 2)
+         ) %>%
+  select(coc_name, coc_num, state, coc_cat, year, attribute, value)
 # from Anchorage Open Data program
 set_2 <- read.csv("data/homelessness-count-usa.csv",
                   stringsAsFactors = FALSE
@@ -23,25 +28,29 @@ set_2 <- read.csv("data/homelessness-count-usa.csv",
          attribute = Attribute.Name,
          value = Value
          ) %>%
-  select(coc_name, coc_num, year, attribute, value)
-
+  mutate(state = str_sub(coc_num, 1, 2),
+         coc_cat = "x"
+         ) %>%
+  select(coc_name, coc_num, state, coc_cat, year, attribute, value)
 # from Kaggle, user def love(x)
 set_3 <- read.csv("data/homelessness-2007-2016.csv",
                   stringsAsFactors = FALSE
                   ) %>%
-  mutate(year = substr(Year, 5, 8)) %>%
   rename(coc_name = CoC.Name,
          coc_num = CoC.Number,
          attribute = Measures,
          value = Count
   ) %>%
-  select(coc_name, coc_num, year, attribute, value)
+  mutate(year = substr(Year, 5, 8),
+         state = str_sub(coc_num, 1, 2),
+         coc_cat = "x"
+  ) %>%
+  select(coc_name, coc_num, state, coc_cat, year, attribute, value)
+
 # merge all datasets
-homelessness <- 
+homelessness <- rbind(set_1, set_2, set_3)
 
 # summary list
-summary_info <- list()
-summary_info$num_observations <- nrow(my_dataframe)
-summary_info$some_max_value <- my_dataframe %>%
-  filter(some_var == max(some_var, na.rm = T)) %>%
-  select(some_label)
+summary <- list()
+#summary$num_observations <- nrow(homelessness)
+#summary_info$state_totals_by_yr <- sum()
