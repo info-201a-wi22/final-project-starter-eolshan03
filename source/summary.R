@@ -2,7 +2,7 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 
-# load and organize data for merge
+# first, load and organize data for merge
 # from Georgia Geospacial Information Office - unfinished
 set_1 <- read.csv("data/pit-homeless-by-coc.csv", stringsAsFactors = FALSE) %>%
   rename(coc_name = L0Continuum_of_Care_Grantee_Are,
@@ -47,10 +47,19 @@ set_3 <- read.csv("data/homelessness-2007-2016.csv",
   ) %>%
   select(coc_name, coc_num, state, coc_cat, year, attribute, value)
 
-# merge all datasets
-homelessness <- rbind(set_1, set_2, set_3)
+# merge the datasets and return
+combined_homeless <- rbind(set_1, set_2, set_3)
+write.csv(combined_homeless, "data/combined_homeles.csv")
 
+homelessness <- load_all_data()
 # summary list
 summary <- list()
-#summary$num_observations <- nrow(homelessness)
-#summary_info$state_totals_by_yr <- sum()
+summary$num_observations <- nrow(combined_homeless)
+summary$urban_area_highest_total <- combined_homeless %>%
+  filter(coc_cat == "Major Cities" | coc_cat == "Other Urban CoCs",
+         attribute == "Total Homeless" | str_sub(attribute, 1, 3) == "TOT",
+         value == max(value, na.rm = TRUE)
+         ) %>%
+  pull(coc_name, state)
+
+  
