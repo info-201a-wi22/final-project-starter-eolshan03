@@ -1,6 +1,6 @@
 ---
 title: "Your Project Title"
-authors: "Samira Shirazy, Rebecca Chan, Dinah Bahta and Emily Olshan"
+author: "Samira Shirazy, Rebecca Chan, Dinah Bahta and Emily Olshan"
 date: "2/18/2022"
 output: html_document
 ---
