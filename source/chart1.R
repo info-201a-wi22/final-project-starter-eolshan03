@@ -15,7 +15,7 @@ homeless_data <- read.csv(filename, header = TRUE, stringsAsFactors = FALSE)
 View(homeless_data)
 
 # explain what this means pls
-ah <- homeless_data %>%
+homelessness_by_year <- homeless_data %>%
   select(Year, State, Count, Measures) %>%
   mutate(yr = as.numeric(substring(Year, 5, 8))) %>%
   group_by(yr) %>%
@@ -24,4 +24,11 @@ ah <- homeless_data %>%
 View(ah)
 
 # Create Area Chart
-
+ggplot(data = homelessness_by_year) +
+  geom_line(mapping = aes(x = yr, y = yearly_tot),
+  color = "blue",
+  size = 1,
+  alpha = 1
+  ) +
+  ylim(0, 3200000)
+  
