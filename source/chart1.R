@@ -23,12 +23,26 @@ homelessness_by_year <- homeless_data %>%
   summarize(yearly_tot = sum(boi, na.rm = TRUE))
 View(ah)
 
-# Create Area Chart
-ggplot(data = homelessness_by_year) +
-  geom_line(mapping = aes(x = yr, y = yearly_tot),
-  color = "blue",
-  size = 1,
-  alpha = 1
+
+# draft: Create Area Chart
+ggplot(homelessness_by_year, aes(x = yr, y = yearly_tot)) +
+  ylim(0, 3200000) +
+  scale_y_continuous(labels = scales::comma) +
+  geom_area(
+    color = "black",
+    alpha = .5,
+    size = 2,
+    fill = 8
   ) +
-  ylim(0, 3200000)
+  geom_point(
+    size = 2,
+    color = "red"
+  ) +
+  labs (
+    title = "Homeless Population in U.S. by year",
+    subtitle = "Sum of homelessness populations from 2007 to 2016",
+    x = "Year",
+    y = "Population Sum",
+    color = "Urbanity"
+  )
   
