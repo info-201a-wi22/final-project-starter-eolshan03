@@ -13,7 +13,7 @@ filename <- "../data/homelessness-2007-2016.csv"
 homeless_data <- read.csv(filename, header = TRUE, stringsAsFactors = FALSE)
 
 # This chart will find the total sum of all the homelessness categories in each
-# year. Then, 
+# year. 
 homelessness_by_year <- homeless_data %>%
   select(Year, State, Count, Measures) %>%
   mutate(year = as.numeric(substring(Year, 5, 8))) %>%
@@ -21,7 +21,7 @@ homelessness_by_year <- homeless_data %>%
   mutate(population_sum = as.numeric(gsub("[,]","", Count))) %>%
   summarize(yearly_total = sum(population_sum, na.rm = TRUE))
 
-bar_plot <- ggplot(homelessness_by_year, aes(x = year, y = yearly_total)) +
+line_chart <- ggplot(homelessness_by_year, aes(x = year, y = yearly_total)) +
   scale_y_continuous(labels = scales::comma) +
   geom_area(
     color = "black",
@@ -34,8 +34,8 @@ bar_plot <- ggplot(homelessness_by_year, aes(x = year, y = yearly_total)) +
     color = "red"
   ) +
   labs (
-    title = "Homeless Population in U.S. by year",
-    subtitle = "Sum of the homelessness populations from 2007 to 2016",
+    title = "Homeless Population in U.S. By Year",
+    subtitle = "The total homelessness populations from 2007 to 2016",
     x = "Year",
     y = "Population Sum",
     color = "Urbanity"
