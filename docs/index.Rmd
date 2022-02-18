@@ -33,7 +33,7 @@ plot(final_bar_chart)
 ``` {r, echo = FALSE, message = FALSE, include = FALSE}
 source("../source/Scatter_Plot.R")
 ```
-
+This scatter plot displays the difference between total homeless counts in Washington vs New York. The purpose of this chart is too show the difference in homelessness between the years of 2007-2016. The observation that was made from looking at the chart was that New York had higher rates of homelessness throughout the year. New York's total homeless population comes at a higher rate, therefore showing their homeless population exceeds Washington State.
 ``` {r, echo = FALSE, message = FALSE}
 plot(scatter_plot)
 ```
