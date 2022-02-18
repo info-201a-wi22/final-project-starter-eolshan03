@@ -25,8 +25,8 @@ scatter_plot <- ggplot(data = the_homeless) +
   labs(
     
   title = "Total Homeless Population of (New York vs. Washington State)",
-  subtitle = "(Total Population By Year)",
-  x = "Year (2007-2016)",
+  subtitle = "From 2007 to 2016",
+  x = "Year",
   y = "Total Homeless Count",
   color = "Location") +
   theme(plot.title = element_text(face ="bold", size=15)
