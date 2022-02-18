@@ -27,7 +27,6 @@ View(homelessness_by_year)
 
 # Creating the chart
 ggplot(homelessness_by_year, aes(x = year, y = yearly_total)) +
-  ylim(0, 3200000) +
   scale_y_continuous(labels = scales::comma) +
   geom_area(
     color = "black",

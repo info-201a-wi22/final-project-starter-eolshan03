@@ -3,6 +3,7 @@ library("dplyr")
 library("ggplot2")
 library("tidyr")
 library("stringr")
+
 setwd("~/Documents/Group Project/final-project-starter-eolshan03")
 homelessness <- read.csv("data/homelessness-2007-2016.csv", stringsAsFactors = FALSE)
 
@@ -10,7 +11,8 @@ homelessness <- read.csv("data/homelessness-2007-2016.csv", stringsAsFactors = F
 the_homeless <- homelessness %>%
   group_by(Year,State) %>%
   filter(State == "WA" || State == "NY") %>%
-  summarize(Count = sum(as.numeric(Count), na.rm = TRUE))
+  summarize(Count = sum(as.numeric(Count), na.rm = TRUE)) %>%
+  mutate(Year = as.numeric(substring(Year, 5,8)))
   View(the_homeless)
   
 #Creating the Scatter Plot
