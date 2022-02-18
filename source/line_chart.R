@@ -40,4 +40,3 @@ bar_plot <- ggplot(homelessness_by_year, aes(x = year, y = yearly_total)) +
     y = "Population Sum",
     color = "Urbanity"
 )
-
