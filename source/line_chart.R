@@ -5,7 +5,7 @@ library("ggplot2")
 library("stringr")
 
 # Set working directory 
-#setwd("C:/Users/Samira Shirazy/Desktop/final-project-starter-eolshan03")
+setwd("C:/Users/Samira Shirazy/Desktop/final-project-starter-eolshan03")
 getwd()
 
 # Load homelessness data
