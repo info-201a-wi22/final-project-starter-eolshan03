@@ -30,23 +30,7 @@ ggplot(homeless_pop) +
   labs(fill = "Community Type", title = "Homeless Pop over Time \n by Community Type")
 ```
 
-``` {r Scatter_Plot}
-source("../source/Scatter.Plot.R")
-ggplot(data = the_homeless) +
-  geom_point(
-    mapping = aes(x = Year, y = Count, color = State), alpha = .9, size = 3
-  ) +
-  scale_color_manual(values=c("Purple","Green")
-  ) +
-  theme(axis.title = element_text(face="bold", size=13)
-  ) +
-  labs(
-    
-  title = "Total Homeless Population of (New York vs. Washington State)",
-  subtitle = "(Total Population By Year)",
-  x = "Year (2007-2016)",
-  y = "Total Homeless Count",
-  color = "Location") +
-  theme(plot.title = element_text(face ="bold", size=15)
-  )
+``` {r scatter_plot}
+source("../source/Scatter_Plot.R")
+plot(scatter_plot)
 ```

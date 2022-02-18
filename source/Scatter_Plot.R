@@ -16,7 +16,7 @@ the_homeless <- homelessness %>%
   View(the_homeless)
   
 #Creating the Scatter Plot
-ggplot(data = the_homeless) +
+scatter_plot <- ggplot(data = the_homeless) +
   geom_point(
     mapping = aes(x = Year, y = Count, color = State), alpha = .9, size = 3
   ) +
