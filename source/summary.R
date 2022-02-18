@@ -1,7 +1,6 @@
 library(dplyr)
 library(tidyr)
 library(stringr)
-
 # this only needed to be done once to create combined dataset. started by 
 # loading and organizing data for merge
 # from Georgia Geospacial Information Office
