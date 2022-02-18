@@ -41,11 +41,11 @@ city <- total_area_type("Major Cities") %>%
 pit_homeless <- pit_homeless %>%
   group_by(year, total) %>%
   summarize()
-  
+
+
 join <- left_join(rural, suburban, by = "year")
 join2 <- left_join(urban, city, by = "year")
-join3 <- left_join(join, join2, by = "year")
-homeless_by_area <- left_join(join3, pit_homeless, by = "year")
+homeless_by_area <- left_join(join, join2, by = "year")
 
 homeless_pop <- homeless_by_area %>%
   select(year, total_rural, total_suburban, total_city, total_urban) %>%

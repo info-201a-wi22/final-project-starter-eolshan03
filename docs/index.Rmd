@@ -26,6 +26,7 @@ plot(line_chart)
 source("../source/bar_chart.R")
 ```
 
+This is a stacked bar chart that shows the change in the total homeless population every five years (2008, 2013, and 2018) as well as the percentages of these totals based on community type (rural, suburban, etc). The purpose of this chart is to reveal the change in homeless population and how homeless populations vary by community area. The stacked bar chart and its data reveal that the total homeless population has somewhat increased since 2008 and has stayed relatively high through 2013 and 2018. The chart also reveals that most of the homeless population are concentrated in cities and suburban areas, rather than urban or rural community areas. 
 ``` {r, echo = FALSE, message = FALSE}
 plot(final_bar_chart)
 ```
