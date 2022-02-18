@@ -6,21 +6,48 @@ output: html_document
 ---
 
 ``` {r setup, include = FALSE}
-# Source results from charts
-source("line_chart.R")
-source("bar_chart.R")
-# source("../source/"): placeholder for sourcing Dinah's file
 
 # Load necessary libraries
 library("dplyr")
 library("tidyr")
 library("ggplot2")
 library("stringr")
-library("kintr")
+library("knitr")
 
 ```
 
-``` {r line_chart, echo = FALSE}
-# Show line chart
+``` {r line_chart}
+source("../source/line_chart.R")
+ggplot(homelessness_by_year, aes(x = year, y = yearly_total)) +
+  scale_y_continuous(labels = scales::comma) +
+  geom_area(
+    color = "black",
+    alpha = .5,
+    size = 2,
+    fill = 8
+  ) +
+  geom_point(
+    size = 2,
+    color = "red"
+  ) +
+  labs (
+    title = "Homeless Population in U.S. by year",
+    subtitle = "Sum of the homelessness populations from 2007 to 2016",
+    x = "Year",
+    y = "Population Sum",
+    color = "Urbanity"
+)
+```
 
+``` {r bar_chart}
+source("../source/bar_chart.R")
+ggplot(homeless_pop) +
+  geom_col(mapping = aes(year, pop, fill = area)) +
+  ylab("Homeless Population") +
+  scale_fill_discrete(labels = c("total city homeless", "total rural homeless", "total suburban homeless", "total urban homeless")) +
+  labs(fill = "Community Type", title = "Homeless Pop over Time \n by Community Type")
+```
+
+``` {r}
+# chart number 3
 ```

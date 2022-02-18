@@ -25,6 +25,7 @@ ggplot(data = the_homeless) +
   theme(axis.title = element_text(face="bold", size=13)
   ) +
   labs(
+    
   title = "Total Homeless Population of (New York vs. Washington State)",
   subtitle = "(Total Population By Year)",
   x = "Year (2007-2016)",
