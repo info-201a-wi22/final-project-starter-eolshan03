@@ -7,36 +7,33 @@ output: html_document
 
 ``` {r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-
+getwd()
 # Load necessary libraries
-library("dplyr")
-library("tidyr")
-library("ggplot2")
-library("stringr")
 library(knitr)
 
 ```
 
-``` {r, include = FALSE}
+``` {r, echo = FALSE, include = FALSE}
 source("../source/line_chart.R")
 ```
 
-```{r, echo = FALSE}
-plot(bar_plot)
+This is a line chart that displays the total homeless population in the United States from the year 2007 to 2016. The purpose of this chart is to show the change in the population from year to year. The data collected shows that homelessness has not been consistent, in other words, it fluctuates. The advantage of the line chart is that the slope can easily be taken between two years to calculate the change. In addition, low and high populations
+```{r, echo = FALSE, message = FALSE}
+plot(line_chart)
 ```
 
 ``` {r, echo = FALSE, include = FALSE}
 source("../source/bar_chart.R")
 ```
 
-``` {r, echo = FALSE}
+``` {r, echo = FALSE, message = FALSE}
 plot(final_bar_chart)
 ```
 
-``` {r, echo = FALSE}
+``` {r, echo = FALSE, message = FALSE, include = FALSE}
 source("../source/Scatter_Plot.R")
 ```
 
-``` {r, echo = FALSE}
+``` {r, echo = FALSE, message = FALSE}
 plot(scatter_plot)
 ```
