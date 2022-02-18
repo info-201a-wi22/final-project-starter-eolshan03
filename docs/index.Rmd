@@ -18,7 +18,7 @@ library("knitr")
 
 ``` {r line_chart, echo = FALSE, include = FALSE}
 source("../source/line_chart.R")
-
+plot(bar_plot)
 ```
 
 ``` {r bar_chart}
