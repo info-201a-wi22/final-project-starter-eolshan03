@@ -49,11 +49,5 @@ homeless_by_area <- left_join(join3, pit_homeless, by = "year")
 
 homeless_pop <- homeless_by_area %>%
   select(year, total_rural, total_suburban, total_city, total_urban) %>%
-  gather(key = , value = pop, -year)
-
-ggplot(homeless_pop) +
-  geom_col(mapping = aes(year, pop, fill = area)) +
-  ylab("Homeless Population") +
-  scale_fill_discrete(labels = c("total city homeless", "total rural homeless", "total suburban homeless", "total urban homeless")) +
-  labs(fill = "Community Type", title = "Homeless Pop over Time \n by Community Type")
+  gather(key = area, value = pop, -year)
 
