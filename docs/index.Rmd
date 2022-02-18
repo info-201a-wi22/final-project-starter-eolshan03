@@ -18,16 +18,12 @@ library("knitr")
 
 ``` {r line_chart, echo = FALSE, include = FALSE}
 source("../source/line_chart.R")
-
+plot(bar_plot)
 ```
 
-``` {r bar_chart}
+``` {r bar_chart, echo = FALSE, include = FALSE}
 source("../source/bar_chart.R")
-ggplot(homeless_pop) +
-  geom_col(mapping = aes(year, pop, fill = area)) +
-  ylab("Homeless Population") +
-  scale_fill_discrete(labels = c("total city homeless", "total rural homeless", "total suburban homeless", "total urban homeless")) +
-  labs(fill = "Community Type", title = "Homeless Pop over Time \n by Community Type")
+plot(final_bar_chart)
 ```
 
 ``` {r scatter_plot}
