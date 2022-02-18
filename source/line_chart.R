@@ -24,24 +24,3 @@ homelessness_by_year <- homeless_data %>%
   summarize(yearly_total = sum(population_sum, na.rm = TRUE))
 View(homelessness_by_year)
 
-
-# Creating the chart
-ggplot(homelessness_by_year, aes(x = year, y = yearly_total)) +
-  scale_y_continuous(labels = scales::comma) +
-  geom_area(
-    color = "black",
-    alpha = .5,
-    size = 2,
-    fill = 8
-  ) +
-  geom_point(
-    size = 2,
-    color = "red"
-  ) +
-  labs (
-    title = "Homeless Population in U.S. by year",
-    subtitle = "Sum of the homelessness populations from 2007 to 2016",
-    x = "Year",
-    y = "Population Sum",
-    color = "Urbanity"
-  )
