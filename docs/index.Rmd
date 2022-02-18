@@ -16,27 +16,9 @@ library("knitr")
 
 ```
 
-``` {r line_chart}
+``` {r line_chart, echo = FALSE, include = FALSE}
 source("../source/line_chart.R")
-ggplot(homelessness_by_year, aes(x = year, y = yearly_total)) +
-  scale_y_continuous(labels = scales::comma) +
-  geom_area(
-    color = "black",
-    alpha = .5,
-    size = 2,
-    fill = 8
-  ) +
-  geom_point(
-    size = 2,
-    color = "red"
-  ) +
-  labs (
-    title = "Homeless Population in U.S. by year",
-    subtitle = "Sum of the homelessness populations from 2007 to 2016",
-    x = "Year",
-    y = "Population Sum",
-    color = "Urbanity"
-)
+
 ```
 
 ``` {r bar_chart}
