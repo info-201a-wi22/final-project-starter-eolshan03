@@ -26,7 +26,7 @@ source("../source/bar_chart.R")
 plot(final_bar_chart)
 ```
 
-``` {r scatter_plot}
+``` {r Scatter_Plot, echo = FALSE, include = FALSE}
 source("../source/Scatter_Plot.R")
 plot(scatter_plot)
 ```
