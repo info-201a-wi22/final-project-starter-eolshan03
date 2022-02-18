@@ -7,15 +7,16 @@ output: html_document
 
 ``` {r setup, include = FALSE}
 # Source results from charts
-source("/source/line_chart.R")
-source("/source/bar_chart.R")
+source("line_chart.R")
+source("bar_chart.R")
 # source("../source/"): placeholder for sourcing Dinah's file
 
 # Load necessary libraries
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(stringr)
+library("dplyr")
+library("tidyr")
+library("ggplot2")
+library("stringr")
+library("kintr")
 
 ```
 
