@@ -40,7 +40,12 @@ ggplot(homelessness_by_year, aes(x = year, y = yearly_total)) +
 ```
 
 ``` {r bar_chart}
-#source("../source/bar_chart.R")
+source("../source/bar_chart.R")
+ggplot(homeless_pop) +
+  geom_col(mapping = aes(year, pop, fill = area)) +
+  ylab("Homeless Population") +
+  scale_fill_discrete(labels = c("total city homeless", "total rural homeless", "total suburban homeless", "total urban homeless")) +
+  labs(fill = "Community Type", title = "Homeless Pop over Time \n by Community Type")
 ```
 
 ``` {r}
