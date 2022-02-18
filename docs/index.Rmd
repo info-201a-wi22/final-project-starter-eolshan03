@@ -6,27 +6,37 @@ output: html_document
 ---
 
 ``` {r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 
 # Load necessary libraries
 library("dplyr")
 library("tidyr")
 library("ggplot2")
 library("stringr")
-library("knitr")
+library(knitr)
 
 ```
 
-``` {r line_chart, echo = FALSE, include = FALSE}
+``` {r, include = FALSE}
 source("../source/line_chart.R")
+```
+
+```{r, echo = FALSE}
 plot(bar_plot)
 ```
 
-``` {r bar_chart, echo = FALSE, include = FALSE}
+``` {r, echo = FALSE, include = FALSE}
 source("../source/bar_chart.R")
+```
+
+``` {r, echo = FALSE}
 plot(final_bar_chart)
 ```
 
-``` {r Scatter_Plot, echo = FALSE, include = FALSE}
+``` {r, echo = FALSE}
 source("../source/Scatter_Plot.R")
+```
+
+``` {r, echo = FALSE}
 plot(scatter_plot)
 ```
