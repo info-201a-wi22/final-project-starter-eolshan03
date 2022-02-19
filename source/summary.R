@@ -11,7 +11,7 @@ set_1 <- read.csv("data/pit-homeless-by-coc.csv", stringsAsFactors = FALSE) %>%
          ) %>%
   gather(key = attribute,
          value = "value_text",
-         -coc_name, -coc_num, -coc_cat, -OBJECTID, -Merger_flag, -COCNAME,
+         -coc_name, -coc_num, -coc_cat, -"OBJECTID", -Merger_flag, -COCNAME,
          -SHAPE_Length, -SHAPE_Area
          ) %>%
   mutate(year = paste0("20", str_sub(attribute, -2)),
@@ -41,21 +41,23 @@ set_3 <- read.csv("data/homelessness-2007-2016.csv",
          coc_num = CoC.Number,
          attribute = Measures,
   ) %>%
+  filter(!is.na(Count)) %>%
   mutate(year = substr(Year, 5, 8),
          state = str_sub(coc_num, 1, 2),
          coc_cat = "x",
-         value = as.integer(Count, na.rm = TRUE)
+         value = as.integer(str_replace_all(Count, ",", ""))
   ) %>%
   select(coc_name, coc_num, state, coc_cat, year, attribute, value)
 # merge the datasets and write to csv in data file
 combined_homeless <- rbind(set_1, set_2, set_3)
 write.csv(combined_homeless, "data/combined_homeless.csv")
 
-# now this data can be accessed as follows
-combined_homeless <- read.csv("data/combined_homeless.csv",
-                              stringsAsFactors = FALSE
-                              ) %>%
-  select(coc_name, coc_num, state, coc_cat, year, attribute, value)
+# # now this data can be accessed as follows
+# combined_homeless <- read.csv("data/combined_homeless.csv",
+#                               stringsAsFactors = FALSE
+#                               ) %>%
+#   select(coc_name, coc_num, state, coc_cat, year, attribute, value)
+
 # summary list code here
 summary <- list()
 # num_observations is just the total number of observations across the 3
