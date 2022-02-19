@@ -2,6 +2,8 @@ library("dplyr")
 library("ggplot2")
 library("stringr")
 library("tidyr")
+
+# Set working directory 
 setwd("C:/Users/Samira Shirazy/Desktop/final-project-starter-eolshan03/docs")
 homeless <- read.csv("../data/combined_homeless.csv", stringsAsFactors = F)
 
@@ -52,6 +54,7 @@ homeless_pop <- homeless_by_area %>%
   gather(key = area, value = pop, -year)
 
 final_bar_chart <- ggplot(homeless_pop) +
+  scale_y_continuous(labels = scales::comma) +
   geom_col(mapping = aes(year, pop, fill = area)) +
   ylab("Homeless Population") +
   scale_fill_discrete(labels = c("total city homeless", "total rural homeless", "total suburban homeless", "total urban homeless")) +

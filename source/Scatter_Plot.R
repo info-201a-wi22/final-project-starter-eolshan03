@@ -3,6 +3,8 @@ library("dplyr")
 library("ggplot2")
 library("tidyr")
 library("stringr")
+
+# Set working directory 
 setwd("C:/Users/Samira Shirazy/Desktop/final-project-starter-eolshan03/docs")
 homelessness <- read.csv("../data/homelessness-2007-2016.csv", stringsAsFactors = FALSE)
 
@@ -15,6 +17,7 @@ the_homeless <- homelessness %>%
 
 #Creating the Scatter Plot
 scatter_plot <- ggplot(data = the_homeless) +
+  scale_y_continuous(labels = scales::comma) +
   geom_point(
     mapping = aes(x = Year, y = Count, color = State), alpha = .9 #size = 3
   ) +
