@@ -17,7 +17,6 @@ the_homeless <- homelessness %>%
 
 #Creating the Scatter Plot
 scatter_plot <- ggplot(data = the_homeless) +
-  scale_y_continuous(labels = scales::comma) +
   geom_point(
     mapping = aes(x = Year, y = Count, color = State), alpha = .9 #size = 3
   ) +
@@ -25,8 +24,8 @@ scatter_plot <- ggplot(data = the_homeless) +
   ) +
   theme(axis.title = element_text(face ="bold", size=13)
   ) +
+  scale_y_continuous(labels = scales::comma) +
   labs(
-    
   title = "Total Homeless Population of (New York vs. Washington State)",
   subtitle = "From 2007 to 2016",
   x = "Year",
@@ -34,3 +33,4 @@ scatter_plot <- ggplot(data = the_homeless) +
   color = "Location" +
   theme(plot.title = element_text(face ="bold", size=15))
 )
+plot(scatter_plot)
