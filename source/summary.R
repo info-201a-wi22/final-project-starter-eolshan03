@@ -1,62 +1,62 @@
 library(dplyr)
 library(tidyr)
 library(stringr)
-# this only needed to be done once to create combined dataset. started by 
-# loading and organizing data for merge
-# from Georgia Geospacial Information Office
-set_1 <- read.csv("data/pit-homeless-by-coc.csv", stringsAsFactors = FALSE) %>%
-  rename(coc_name = L0Continuum_of_Care_Grantee_Are,
-         coc_num = COCNUM,
-         coc_cat = COCCAT,
-         ) %>%
-  gather(key = attribute,
-         value = "value_text",
-         -coc_name, -coc_num, -coc_cat, -"OBJECTID", -Merger_flag, -COCNAME,
-         -SHAPE_Length, -SHAPE_Area
-         ) %>%
-  mutate(year = paste0("20", str_sub(attribute, -2)),
-         state = str_sub(coc_num, 1, 2),
-         value = as.integer(value_text)
-         ) %>%
-  select(coc_name, coc_num, state, coc_cat, year, attribute, value)
-# from Anchorage Open Data program
-set_2 <- read.csv("data/homelessness-count-usa.csv",
-                  stringsAsFactors = FALSE
-                  ) %>%
-  rename(coc_name = CoC.Name,
-         coc_num = CoC.Number,
-         year = Year,
-         attribute = Attribute.Name,
-         ) %>%
-  mutate(state = str_sub(coc_num, 1, 2),
-         coc_cat = "x",
-         value = as.integer(Value)
-         ) %>%
-  select(coc_name, coc_num, state, coc_cat, year, attribute, value)
-# from Kaggle, user def love(x)
-set_3 <- read.csv("data/homelessness-2007-2016.csv",
-                  stringsAsFactors = FALSE
-                  ) %>%
-  rename(coc_name = CoC.Name,
-         coc_num = CoC.Number,
-         attribute = Measures,
-  ) %>%
-  filter(!is.na(Count)) %>%
-  mutate(year = substr(Year, 5, 8),
-         state = str_sub(coc_num, 1, 2),
-         coc_cat = "x",
-         value = as.integer(str_replace_all(Count, ",", ""))
-  ) %>%
-  select(coc_name, coc_num, state, coc_cat, year, attribute, value)
-# merge the datasets and write to csv in data file
-combined_homeless <- rbind(set_1, set_2, set_3)
-write.csv(combined_homeless, "data/combined_homeless.csv")
-
-# # now this data can be accessed as follows
-# combined_homeless <- read.csv("data/combined_homeless.csv",
-#                               stringsAsFactors = FALSE
-#                               ) %>%
+# # this only needed to be done once to create combined dataset. started by 
+# # loading and organizing data for merge
+# # from Georgia Geospacial Information Office
+# set_1 <- read.csv("data/pit-homeless-by-coc.csv", stringsAsFactors = FALSE) %>%
+#   rename(coc_name = L0Continuum_of_Care_Grantee_Are,
+#          coc_num = COCNUM,
+#          coc_cat = COCCAT,
+#          ) %>%
+#   gather(key = attribute,
+#          value = "value_text",
+#          -coc_name, -coc_num, -coc_cat, -"OBJECTID", -Merger_flag, -COCNAME,
+#          -SHAPE_Length, -SHAPE_Area
+#          ) %>%
+#   mutate(year = paste0("20", str_sub(attribute, -2)),
+#          state = str_sub(coc_num, 1, 2),
+#          value = as.integer(value_text)
+#          ) %>%
 #   select(coc_name, coc_num, state, coc_cat, year, attribute, value)
+# # from Anchorage Open Data program
+# set_2 <- read.csv("data/homelessness-count-usa.csv",
+#                   stringsAsFactors = FALSE
+#                   ) %>%
+#   rename(coc_name = CoC.Name,
+#          coc_num = CoC.Number,
+#          year = Year,
+#          attribute = Attribute.Name,
+#          ) %>%
+#   mutate(state = str_sub(coc_num, 1, 2),
+#          coc_cat = "x",
+#          value = as.integer(Value)
+#          ) %>%
+#   select(coc_name, coc_num, state, coc_cat, year, attribute, value)
+# # from Kaggle, user def love(x)
+# set_3 <- read.csv("data/homelessness-2007-2016.csv",
+#                   stringsAsFactors = FALSE
+#                   ) %>%
+#   rename(coc_name = CoC.Name,
+#          coc_num = CoC.Number,
+#          attribute = Measures,
+#   ) %>%
+#   filter(!is.na(Count)) %>%
+#   mutate(year = substr(Year, 5, 8),
+#          state = str_sub(coc_num, 1, 2),
+#          coc_cat = "x",
+#          value = as.integer(str_replace_all(Count, ",", ""))
+#   ) %>%
+#   select(coc_name, coc_num, state, coc_cat, year, attribute, value)
+# # merge the datasets and write to csv in data file
+# combined_homeless <- rbind(set_1, set_2, set_3)
+# write.csv(combined_homeless, "data/combined_homeless.csv")
+
+# now this data can be accessed as follows
+combined_homeless <- read.csv("data/combined_homeless.csv",
+                              stringsAsFactors = FALSE
+                              ) %>%
+  select(coc_name, coc_num, state, coc_cat, year, attribute, value)
 
 # summary list code here
 summary <- list()
