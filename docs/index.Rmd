@@ -1,9 +1,53 @@
 ---
-title: "Your Project Title"
+title: "Sheltered and Unsheltered Homeless in the U.S. over Time"
 author: "Samira Shirazy, Rebecca Chan, Dinah Bahta and Emily Olshan"
 date: "2/18/2022"
 output: html_document
 ---
+
+# On the Streets  
+INFO-201: Technical Foundations of Informatics, Winter 2022 | The Information School, University of Washington  
+
+**Authored by:** Emily Olshan (eolshan@uw.edu), Samira Shirazy (samira03@uw.edu), Rebecca Chan (rchan2@uw.edu), Dinah Bahta (dbahta2@uw.edu)   
+
+## Abstract  
+We are concerned with how the number of homeless varies by year and region and how certain groups are more likely to be homeless. To address this concern, we plan to analyze our datasets to find trends in who is most likely to end up homeless and find other factors that influence homelessness rates. We hope that by identifying these trends, we can gain a better idea of which groups need help and how to best help them.  
+
+**Keywords:** homeless, poverty, class, youth & family  
+
+## 1.0 Introduction  
+In our group project, we will be analyzing the different statistics of **homelessness** in different states. The dataset is based on different categories like unsheltered, sheltered, and many more. Throughout our analysis we will be uncovering the trends between homelessness in different states and why they changed overtime. It's important that we recognize this homeless crisis because our country lacks housing resources for underprivileged people. We also want to focus on how housing is an economic problem. Economically, we need to provide homeless people with more job opportunities and help build them financially so this homeless crisis won't continue. By analyzing the data we will be able to use these trend to discuss how we can make a significant change in our housing system. We will also discuss how the government can financially support the homeless and provide them with resources to better improve themselves.  
+
+## 2.0 Design Situation  
+
+### Project Framing  
+The topic of concern for our project is the homeless crisis that is occurring in America. The homeless crisis is currently growing because of the lack of resources that America provides for its citizens. One of the main key elements is economic because as rent and housing prices rise immensely, there needs to be a push for more affordable housing in American cities. It would be much cheaper to provide homeless people with affordable housing than to put them into homeless shelters.  
+
+### Human Values
+The values that are connected within our topic are fighting this homeless crisis to bring a sense of community. We must understand that homeless people are human and need to feel a sense of belonging. If America continues to neglect homeless people, we want to be able to fight this homeless crisis. Homeless people are in a constant cycle of trauma before and after they become homeless. If we also focus on how we can have a system that provides for emotional damage we can fight this homeless crisis.  
+
+### Direct and Indirect Stakeholders  
+The direct stakeholders for this homeless crisis are the federal government and housing providers of housing and services. If the US government funds housing providers we will be able to build affordable housing and fight this crisis. The indirect stakeholders are American citizens because this homeless crisis can happen to anyone so it's important that we make sure to have a plan if it does happen.  
+
+### Harms and Benefits  
+If interventions are taken using data and technology the possible benefits are creating a healthier economy. As mentioned by _common bond communities_, "when people have access to quality affordable housing options, they are far less likely to face environmental threats, and far more likely to have enough income for healthy food options and routine medical care—ultimately helping them lower the risk of severe chronic health problems." By building these houses, the community can use the funding to build a better community.  
+
+## 3.0 Research Questions  
+1. How does the percentage of each homelessness category (unsheltered vs sheltered) change in each state from 2007 to 2016? This question will be answered by calculating the total amount of homeless people in a state. Then, calculating the total amount of homeless people within the unsheltered and sheltered categories. Finding the percent will be taking the unsheltered/sheltered value over the total value. This process will be repeated for each state in each year.
+2. How can this dataset become a foundational skill to change this homeless crisis?
+3. What are the trends in homeless populations by the location in regards to families vs. individuals?
+4. What groups of people (age, veterans, families, etc) are most likely to be sheltered vs unsheltered? 
+
+## 4.0 The Dataset
+_Data Origins_: Our dataset is Point-in-Time data of homeless populations in the US from 2007 to 2016. The CSV file came from Kaggle user ‘def love(x)’ , and the data is credited to the HUD Exchange. The HUD Exchange is an exchange of information and resources surrounding homelessness in the US run by the US Department of Housing and Urban Development. As a department in the federal government, HUD serves a variety of purposes for a variety of people. These tasks also include organizing and providing resources to homeless individuals. The data is widely available and used mainly by different local governments and other groups supporting housing on a local level, as it is widely available and relatively detailed and accurate. HUD has many resources discussing how the collection process works in great detail. They also have information on their website about how the data should be collected to give power to the homeless communities, and emphasizes the use of the collected data to aid those communities. _Data Features_: Each of the 86,529 observations represents a specific group of homeless individuals for an area. These groups include a variety of classifications including, for example, ‘Sheltered Individuals’ or ‘Unsheltered Chronically Homeless People in Families.’ The many groupings cover whether the individuals are sheltered, chronically homeless, in families, and, beginning in 2011, veterans. There is also an entry for each area’s total homeless population. The different areas that the values are reported for are identified by CoC names and numbers. CoC refers to Continuum of Care programs, which assist homeless populations in a given area and report the data to HUD. The CoC’s tend to correlate with counties or other groupings within states and are named as such. CoC numbers use the state abbreviation followed by a dash and a 3 digit number Other variables reported include the year of the observation, the state in which the county falls and the number of individuals that fall into that group. Years are recorded as the 1st of January of that year, as the data takes some time to collect and is reported on a yearly basis only.
+
+## 5.0 Expected Implications
+Identifying trends in the populations that are homeless could help to target areas of particular need and individuals who need aid. Much of our research is interested in the identities of those who are homeless and we are interested in who is more likely to be homeless, whether sheltered or unsheltered, chronically or not. In addition, we’ll be looking at trends related to location and time, to see how those factor into the size of the homeless populations. These could all help to inform policymakers as to what and where aid is needed. In addition, this data could be brought back to the CoCs who compiled it, to help direct them to what is happening in their communities and to help them look at the issues in a new light. Overall, we hope that the answers to our research questions benefit individuals who are experiencing homelessness, in any way that it can.
+
+## 6.0 Limitations
+This data covers a large group of people whose situations are often changing and it is recorded by a variety of individuals. This leads to some limitations on the accuracy of the data, as it isn’t necessarily consistently recorded and accounted for. This indicates that there may be some errors in our analyses, however they likely aren’t huge limitations. In addition, there is relatively limited categories of individuals who are homeless. For example, we can investigate categories, such as sheltered or chronic homelessness, but we cannot look at factors such as a specific location or background. This means that although we are looking for trends, we may not be able to see the true reasoning behind some of the trends, if they are impacted by factors that are not available to us. We are only looking at correlations of the data, but may not be able to discover the truth behind the trends of which individuals are likely to need support.
+
+## Our Visualizations
 
 ``` {r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -18,7 +62,8 @@ library(knitr)
 source("../source/line_chart.R")
 ```
 
-This is a line chart that displays the total homeless population in the United States from the year 2007 to 2016. The purpose of this chart is to show the change in the population from year to year. The data collected shows that homelessness has not been consistent, in other words, it fluctuates. The advantage of the line chart is that the slope can easily be taken between two years to calculate the change. In addition, low and high populations
+This is a line chart that displays the total homeless population in the United States from the year 2007 to 2016. The purpose of this chart is to show the change in the population from year to year. The data collected shows that homelessness has not been consistent, in other words, it fluctuates. The advantage of the line chart is that the slope can easily be taken between two years to calculate the change.
+
 ```{r, echo = FALSE, message = FALSE}
 plot(line_chart)
 ```
@@ -27,7 +72,8 @@ plot(line_chart)
 source("../source/bar_chart.R")
 ```
 
-This is a stacked bar chart that shows the change in the total homeless population every five years (2008, 2013, and 2018) as well as the percentages of these totals based on community type (rural, suburban, etc). The purpose of this chart is to reveal the change in homeless population and how homeless populations vary by community area. The stacked bar chart and its data reveal that the total homeless population has somewhat increased since 2008 and has stayed relatively high through 2013 and 2018. The chart also reveals that most of the homeless population are concentrated in cities and suburban areas, rather than urban or rural community areas. 
+This is a stacked bar chart that shows the change in the total homeless population every five years (2008, 2013, and 2018) as well as the percentages of these totals based on community type (rural, suburban, etc). The purpose of this chart is to reveal the change in homeless population and how homeless populations vary by community area. The stacked bar chart and its data reveal that the total homeless population has somewhat increased since 2008 and has stayed relatively high through 2013 and 2018. The chart also reveals that most of the homeless population are concentrated in cities and suburban areas, rather than urban or rural community areas.
+
 ``` {r, echo = FALSE, message = FALSE}
 plot(final_bar_chart)
 ```
@@ -35,7 +81,9 @@ plot(final_bar_chart)
 ``` {r, echo = FALSE, message = FALSE, include = FALSE}
 source("../source/Scatter_Plot.R")
 ```
-This scatter plot displays the difference between total homeless counts in Washington vs New York. The purpose of this chart is too show the difference in homelessness between the years of 2007-2016. The observation that was made from looking at the chart was that New York had higher rates of homelessness throughout the year. New York's total homeless population comes at a higher rate, therefore showing their homeless population exceeds Washington State.
+
+This scatter plot displays the difference between total homeless counts in Washington vs New York. The purpose of this chart is to show the difference in homelessness between these two states. The observation that was made from looking at the chart was that New York had higher rates of homelessness throughout the year. New York's total homeless population comes at a higher rate, therefore showing their homeless population exceeds Washington State.
+
 ``` {r, echo = FALSE, message = FALSE}
 plot(scatter_plot)
 ```
@@ -43,11 +91,15 @@ plot(scatter_plot)
 ``` {r, echo = FALSE, message = FALSE, include = FALSE}
 source("../source/summary.R")
 ```
-We combined our 3 datasets in order to look at more years worth of data on homeless populations. This created a combined set of `r summary$num_observations` observations, each representing a different homeless population at a specific point in time. The area with the highest total homeless population was `r summary$area_highest_total` and the state with the highest total homeless population was `r summary$state_highest_total_2018`. Many of our research questions have to do with the different situations of homeless individuals, such as whether they are sheltered or not. The average percent by state of homeless individuals who were sheltered was `r summary$avg_percent_sheltered_2016` and unsheltered individuals averaged `r summary$avg_percent_unsheltered_2016`
+
+We combined our 3 datasets in order to look at more years worth of data on homeless populations. This created a combined set of `r summary$num_observations` observations, each representing a different homeless population at a specific point in time. The area with the highest total homeless population was `r summary$area_highest_total` and the state with the highest total homeless population was `r summary$state_highest_total_2018`. Many of our research questions have to do with the different situations of homeless individuals, such as whether they are sheltered or not. The average percent by state of homeless individuals who were sheltered was `r summary$avg_percent_sheltered_2016` and unsheltered individuals averaged `r summary$avg_percent_unsheltered_2016`.
+
 ``` {r, echo = FALSE, message = FALSE, include = FALSE}
 source("../source/aggregate_table.R")
 ```
+
 In this table, we averaged the percent of individuals who were sheltered or unsheltered in 2016 by state. We chose to show this information because a lot of our questions have to do with the trends in different situations across areas and time. This is simply an example of that.
+
 ``` {r, echo = FALSE, message = FALSE}
 library("knitr")
 kable(sheltered_unsheltered_by_state)
