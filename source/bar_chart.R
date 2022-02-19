@@ -2,8 +2,8 @@ library("dplyr")
 library("ggplot2")
 library("stringr")
 library("tidyr")
-
-homeless <- read.csv("https://raw.githubusercontent.com/info-201a-wi22/final-project-starter-eolshan03/main/data/combined_homeless.csv", stringsAsFactors = F)
+setwd("C:/Users/Samira Shirazy/Desktop/final-project-starter-eolshan03/docs")
+homeless <- read.csv("../data/combined_homeless.csv", stringsAsFactors = F)
 
 pit_homeless <- homeless %>%
   filter(year == "2018" | year == "2013" | year == "2008") %>%

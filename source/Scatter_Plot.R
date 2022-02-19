@@ -3,7 +3,7 @@ library("dplyr")
 library("ggplot2")
 library("tidyr")
 library("stringr")
-
+setwd("C:/Users/Samira Shirazy/Desktop/final-project-starter-eolshan03/docs")
 homelessness <- read.csv("../data/homelessness-2007-2016.csv", stringsAsFactors = FALSE)
 
 #Create data for NY and WA total homeless count from 2007-2016

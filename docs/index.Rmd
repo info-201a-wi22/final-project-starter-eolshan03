@@ -7,6 +7,8 @@ output: html_document
 
 ``` {r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(cache = TRUE)
 # Load necessary libraries
 library(knitr)
 
@@ -47,6 +49,8 @@ We combined our 3 datasets in order to look at more years worth of data on homel
 source("../source/aggregate_table.R")
 ```
 In this table, we averaged the percent of individuals who were sheltered or unsheltered in 2016 by state. We chose to show this information because a lot of our questions have to do with the trends in different situations across areas and time. This is simply an example of that.
+
 ``` {r, echo = FALSE, message = FALSE}
+library("knitr")
 kable(sheltered_unsheltered_by_state)
 ```
