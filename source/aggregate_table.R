@@ -2,7 +2,9 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 library(knitr)
+
 setwd("C:/Users/Samira Shirazy/Desktop/final-project-starter-eolshan03/docs")
+
 # loading combined dataset
 combined_homeless <- read.csv("../data/combined_homeless.csv",
                               stringsAsFactors = FALSE
@@ -26,7 +28,7 @@ percent_sheltered <- combined_homeless %>%
 percent_unsheltered <- combined_homeless %>%
   filter(year == 2016,
          attribute == "Unsheltered Homeless" | attribute == "Total Homeless",
-  ) %>%
+         ) %>%
   select(coc_num, attribute, value) %>%
   group_by(coc_num) %>%
   arrange(attribute, .by_group = TRUE) %>%

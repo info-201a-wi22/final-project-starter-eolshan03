@@ -43,13 +43,11 @@ plot(scatter_plot)
 ``` {r, echo = FALSE, message = FALSE, include = FALSE}
 source("../source/summary.R")
 ```
-We combined our 3 datasets in order to look at more years worth of data on homeless populations. This created a combined set of `r summary$num_observations` observations, each representing a different homeless population at a specific point in time. The area with the highest total homeless population was `r summary$area_highest_total` and the state with the highest total homeless population was `r summary$state_highest_total_2018`. Many of our research questions have to do with the different situations of homeless individuals, such as whether they are sheltered or not. The average percent by state of homeless individuals who were sheltered was `r summary$avg-percent-sheltered-2016`% and unsheltered individuals averaged `r summary$avg-percent-unsheltered-2016`%
-
+We combined our 3 datasets in order to look at more years worth of data on homeless populations. This created a combined set of `r summary$num_observations` observations, each representing a different homeless population at a specific point in time. The area with the highest total homeless population was `r summary$area_highest_total` and the state with the highest total homeless population was `r summary$state_highest_total_2018`. Many of our research questions have to do with the different situations of homeless individuals, such as whether they are sheltered or not. The average percent by state of homeless individuals who were sheltered was  and unsheltered individuals averaged 
 ``` {r, echo = FALSE, message = FALSE, include = FALSE}
 source("../source/aggregate_table.R")
 ```
 In this table, we averaged the percent of individuals who were sheltered or unsheltered in 2016 by state. We chose to show this information because a lot of our questions have to do with the trends in different situations across areas and time. This is simply an example of that.
-
 ``` {r, echo = FALSE, message = FALSE}
 library("knitr")
 kable(sheltered_unsheltered_by_state)
