@@ -62,7 +62,7 @@ library(knitr)
 source("../source/line_chart.R")
 ```
 
-This is a line chart that displays the total homeless population in the United States from the year 2007 to 2016. The purpose of this chart is to show the change in the population from year to year. The data collected shows that homelessness has not been consistent, in other words, it fluctuates. The advantage of the line chart is that the slope can easily be taken between two years to calculate the change.
+This is a line chart that displays the total homeless population in the United States from the year 2007 to 2016. The purpose of this chart is to show the change in the population from year to year. The data collected shows that homelessness has not been consistent, in other words, it fluctuates. The advantage of the line chart is that the slope can easily be taken between two years to calculate the change.A pertinent observation found in this chart is that the population faintly looks to be increasing/decreasing sinusoidal, meaning that it is similar to the shape of a sine graph.
 
 ```{r, echo = FALSE, message = FALSE}
 plot(line_chart)
