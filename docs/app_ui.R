@@ -1,4 +1,5 @@
 library(shiny)
+library(plotly)
 
 # **Samira's Page 3 Stuff Below**
 
@@ -42,13 +43,13 @@ chart_page_3 <- tabPanel(
       change_state,
       year_slider,
       change_thickness
-    )
-  ),
+    ),
   mainPanel(
     h5(strong("About the Graph")),
     p("My paragraph will go here..."),
     h3(strong("Graph")),
     plotlyOutput("state_vs_national_homelessness_pop")
+  )
   )
 )
 
