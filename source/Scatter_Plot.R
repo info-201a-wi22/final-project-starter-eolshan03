@@ -18,7 +18,7 @@ the_homeless <- homelessness %>%
 #Creating the Scatter Plot
 scatter_plot <- ggplot(data = the_homeless) +
   geom_point(
-    mapping = aes(x = Year, y = Count, color = State), alpha = .9 #size = 3
+    mapping = aes(x = Year, y = Count, color = State), alpha = .9
   ) +
   scale_color_manual(values=c('Purple','Green')
   ) +
@@ -32,5 +32,6 @@ scatter_plot <- ggplot(data = the_homeless) +
   y = "Total Homeless Count",
   color = "Location" +
   theme(plot.title = element_text(face ="bold", size=15))
-)
-plot(scatter_plot)
+) + 
+  
+#plot(scatter_plot)
