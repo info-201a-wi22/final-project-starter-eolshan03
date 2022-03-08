@@ -46,7 +46,22 @@ chart_page_3 <- tabPanel(
     ),
     mainPanel(
       h5(strong("About the Graph")),
-      p("My paragraph will go here..."),
+      p("Below is a line chart that shows the total homelessness population in
+        the United States and the total homelessness population in a state that
+        the user may choose. The states that can be chosen are any of the 50
+        states in the U.S. as well as D.C., Puerto Rico and Guam. The user may
+        select a certain time range using the slider and change the thickness
+        of the lines that appear on the graph. It is interactive via plotly so,
+        the user may hover over each line to see the exact value."),
+      p("The importance of this graph is to show how the homeless trends in a
+        specific state compare to the nation's totals. By looking through each
+        state, we can see which states make up a higher portion of the total
+        population-meaning those states have more homeless people in it. Also,
+        with the incorporation of the years, we can see if the trends
+        (increases/decreases/stills) are the same or different between the two
+        lines. The graph makes it easy to compare this by looking at the slope
+        of each line. This analysis could lead to further research into why they
+        aren't the same-if there are differences in the slopes."),
       h3(strong("Graph")),
       plotlyOutput("state_vs_national_homelessness_pop")
     )
