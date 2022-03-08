@@ -7,13 +7,13 @@ library("tidyverse")
 library("stringr")
 
 # load the dataset
-file_name <- "homelessness-2007-2016.csv"
-homelessness_2007_2016 <- read.csv(file_name, header = TRUE, stringsAsFactors = FALSE)
+dataset <- "homelessness-2007-2016.csv"
+homelessness_2007_2016 <- read.csv(dataset, header = TRUE, stringsAsFactors = FALSE)
 
 server <- function(input, output) {
-  # Emily's stuff
+  # Emily's chart
   
-  # Dinah's stuff
+  # Dinah's chart
   
   # Samira's chart
   output$state_vs_national_homelessness_pop <- renderPlot({
