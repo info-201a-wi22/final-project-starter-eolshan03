@@ -5,6 +5,8 @@ library("plotly")
 library("ggplot2")
 library("tidyverse")
 library("stringr")
+library("maps")
+library("viridis")
 
 # load the dataset
 dataset <- "homelessness-2007-2016.csv"
@@ -12,6 +14,45 @@ homelessness_2007_2016 <- read.csv(dataset, header = TRUE, stringsAsFactors = FA
 
 server <- function(input, output) {
   # Emily's chart
+  output$homeless_map <- renderPlotly({
+    coc <- combined %>%
+      select(coc_cat, state, year, value) %>%
+      filter(year == input$year_choice) %>%
+      group_by(state) %>%
+      summarize(total = sum(value, na.rm = T))
+    
+    
+    coc$state <- state.name[match(coc$state, state.abb)]
+    coc$state <- tolower(coc$state)
+    
+    fips <- map_data("state") %>%
+      rename(polyname = region) %>%
+      left_join(state.fips, by = "polyname")
+    
+    states <- fips %>%
+      rename(state = polyname) %>%
+      left_join(coc, by = "state")
+    
+    blank_theme <- theme_bw() +
+      theme(axis.line = element_blank(), 
+            axis.text = element_blank(), 
+            axis.ticks = element_blank(),       
+            axis.title = element_blank(),       
+            plot.background = element_blank(),  
+            panel.grid.major = element_blank(), 
+            panel.grid.minor = element_blank(), 
+            panel.border = element_blank())
+    
+    map <- ggplot(states) +
+      geom_polygon(aes(long, lat, group = group, fill = total), color = "black") +
+      coord_map() +
+      scale_fill_viridis(option = "magma", direction = -1) +
+      blank_theme +
+      labs(title = paste0("Homelessness Population Concentration over Time (", 
+                          input$year_choice, ")")) 
+    
+    ggplotly(map)
+  })
   
   # Dinah's chart
   
