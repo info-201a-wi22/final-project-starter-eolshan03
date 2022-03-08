@@ -1,5 +1,6 @@
 
 # Load the necessary packages
+<<<<<<< HEAD
 library("dplyr")
 library("plotly")
 library("ggplot2")
@@ -7,6 +8,14 @@ library("tidyverse")
 library("stringr")
 library("maps")
 library("viridis")
+=======
+library(dplyr)
+library(plotly)
+library(ggplot2)
+library(tidyverse)
+library(stringr)
+library(shiny)
+>>>>>>> 2ec974bae999e30ebf2c93d11375241242a44e0b
 
 # load the dataset
 dataset <- "homelessness-2007-2016.csv"
@@ -14,6 +23,7 @@ homelessness_2007_2016 <- read.csv(dataset, header = TRUE, stringsAsFactors = FA
 
 server <- function(input, output) {
   # Emily's chart
+<<<<<<< HEAD
   output$homeless_map <- renderPlotly({
     coc <- combined %>%
       select(coc_cat, state, year, value) %>%
@@ -56,6 +66,35 @@ server <- function(input, output) {
   
   # Dinah's chart
   
+=======
+  #Dinah's chart
+ output$graph <- renderPlot({
+  # calculating the sum of sheltered homeless individuals and sheltered
+  # homeless people in families of different states
+  the_homeless <- homelessness %>%
+    select(Measures,State,Count)%>%
+    filter(State == input$State) %>%
+    group_by(State, Measures) %>%
+    filter(Measures == "Sheltered Homeless Individuals" | Measures == "Sheltered Homeless People in Families") %>%
+    summarise(count = sum(as.numeric(Count), na.rm = TRUE))
+  # the dodge bar chart that shows comparison between sheltered homeless individuals and sheltered
+  # homeless people in families
+  the_graph <- ggplot(the_homeless, mapping = aes(x = input$State, y = count , fill = Measures)) +
+   geom_col(position = "dodge") +
+    labs(
+     title = "Sheltered Homeless Individuals vs. Sheltered Individuals in Families",
+     subtitle = "(By State)",
+     x = "State",
+     y = "Count"
+     ) +
+    theme(plot.title = element_text(face = "bold", size=15)) +
+    theme(axis.title = element_text(face = "bold")) +
+    scale_fill_manual(values = c("Purple", "green")) +
+    scale_y_continuous(limits = input$the_sum)
+    return(the_graph)
+    }
+    )
+>>>>>>> 2ec974bae999e30ebf2c93d11375241242a44e0b
   # Samira's chart
   output$state_vs_national_homelessness_pop <- renderPlotly({
     # calculate the state homelessness totals by year
