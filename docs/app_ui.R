@@ -4,6 +4,7 @@ library(plotly)
 # **Samira's Page 3 Stuff Below**
 chart_page_1 <- tabPanel(
   "Homelessness Map", 
+  h1(""),
   sidebarLayout(
     sidebarPanel(
       selectInput("year_choice", "Choose a Year", c("2018", "2016", "2015", 
@@ -56,7 +57,8 @@ change_thickness <- sliderInput(
 )
 
 chart_page_3 <- tabPanel(
-  "Chart 3",
+  "Line Chart",
+  h1(""),
   sidebarLayout(
     sidebarPanel(
       h4(strong("Graph Customization")),
@@ -90,7 +92,9 @@ chart_page_3 <- tabPanel(
 
 # Dinah's page 
 chart_page_2 <- tabPanel(
-  # lets users change the homeless count (y-axis)
+  "Bar Chart",
+  # lets users change the homeless count (y-axis),
+  h1("")
   h4("Bar Chart"),
   sidebarLayout(
     sidebarPanel(
@@ -128,10 +132,10 @@ chart_page_2 <- tabPanel(
 ui <- navbarPage(
   title = "Homelessness in the US",
   position = "fixed-top",
-  intro,
+  # intro,
   chart_page_1,
   chart_page_2,
-  chart_page_3,
-  summary,
-  report
+  chart_page_3
+  # summary,
+  # report
 )
