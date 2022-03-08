@@ -89,7 +89,7 @@ chart_page_3 <- tabPanel(
 )
 
 # Dinah's page 
-chart_page_1 <- tabPanel(
+chart_page_2 <- tabPanel(
   # lets users change the homeless count (y-axis)
   h4("Bar Chart"),
   sidebarLayout(
