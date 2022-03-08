@@ -16,7 +16,7 @@ server <- function(input, output) {
   # Dinah's chart
   
   # Samira's chart
-  output$state_vs_national_homelessness_pop <- renderPlot({
+  output$state_vs_national_homelessness_pop <- renderPlotly({
     # calculate the state homelessness totals by year
     # filter by the state selected by the user
     state_tot <- homelessness_2007_2016 %>%
@@ -37,7 +37,8 @@ server <- function(input, output) {
       summarize("National" = sum(Count, na.rm = T)) %>%
       left_join(state_tot, by = "Year") %>%
       filter(Year >= input$year_slider[1], Year <= input$year_slider[2]) %>%
-      gather(key = tot_type, value = tots, -Year)
+      gather(key = tot_type, value = tots, -Year) %>%
+      rename("Type" = tot_type, "Population" = tots)
     
     # make the plot, with 1 line representing that state populations and the
     # other line representing the national populations
@@ -46,6 +47,7 @@ server <- function(input, output) {
         mapping = aes(x = Year, y = tots, color = tot_type),
         size = input$line_slider
       ) +
+      scale_y_continuous(labels = scales::comma) +
       labs(
         title = paste0("Population of the Total Homelessness Population in the 
                      United States versus ", input$select_state),
