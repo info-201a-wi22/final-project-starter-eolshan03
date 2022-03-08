@@ -1,0 +1,32 @@
+---
+title: "Your Project Title"
+author: "Samira Shirazy, Rebecca Chan, Dinah Bahta and Emily Olshan"
+date: "2/18/2022"
+output: html_document
+---
+
+``` {r setup, include = FALSE}
+
+# Load necessary libraries
+library("dplyr")
+library("tidyr")
+library("ggplot2")
+library("stringr")
+library("knitr")
+
+```
+
+``` {r line_chart, echo = FALSE, include = FALSE}
+source("../source/line_chart.R")
+plot(bar_plot)
+```
+
+``` {r bar_chart, echo = FALSE, include = FALSE}
+source("../source/bar_chart.R")
+plot(final_bar_chart)
+```
+
+``` {r Scatter_Plot, echo = FALSE, include = FALSE}
+source("../source/Scatter_Plot.R")
+plot(scatter_plot)
+```

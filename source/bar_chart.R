@@ -3,7 +3,9 @@ library("ggplot2")
 library("stringr")
 library("tidyr")
 
-homeless <- read.csv("https://raw.githubusercontent.com/info-201a-wi22/final-project-starter-eolshan03/main/data/combined_homeless.csv", stringsAsFactors = F)
+# Set working directory 
+setwd("C:/Users/Samira Shirazy/Desktop/final-project-starter-eolshan03/docs")
+homeless <- read.csv("../data/combined_homeless.csv", stringsAsFactors = F)
 
 pit_homeless <- homeless %>%
   filter(year == "2018" | year == "2013" | year == "2008") %>%
@@ -42,17 +44,18 @@ city <- total_area_type("Major Cities") %>%
 pit_homeless <- pit_homeless %>%
   group_by(year, total) %>%
   summarize()
-
-
+  
 join <- left_join(rural, suburban, by = "year")
 join2 <- left_join(urban, city, by = "year")
-homeless_by_area <- left_join(join, join2, by = "year")
+join3 <- left_join(join, join2, by = "year")
+homeless_by_area <- left_join(join3, pit_homeless, by = "year")
 
 homeless_pop <- homeless_by_area %>%
   select(year, total_rural, total_suburban, total_city, total_urban) %>%
   gather(key = area, value = pop, -year)
 
 final_bar_chart <- ggplot(homeless_pop) +
+  scale_y_continuous(labels = scales::comma) +
   geom_col(mapping = aes(year, pop, fill = area)) +
   ylab("Homeless Population") +
   scale_fill_discrete(labels = c("total city homeless", "total rural homeless", "total suburban homeless", "total urban homeless")) +
