@@ -3,14 +3,18 @@ library(plotly)
 
 # **Samira's Page 3 Stuff Below**
 chart_page_1 <- tabPanel(
-  "Homelessness Map", 
-  h1(""),
+  "Homelessness Map",
+  h1(""), 
   sidebarLayout(
     sidebarPanel(
       selectInput("year_choice", "Choose a Year", c("2018", "2016", "2015", 
                                                     "2014", "2013","2012", "2011", 
-                                                    "2010", "2009", "2008", "2007")),
-      p("This map helps to answer our research question: How can this 
+                                                    "2010", "2009", "2008", "2007"))
+    
+    ),
+    mainPanel(
+      plotlyOutput("homeless_map"),
+    p("This map helps to answer our research question: How can this 
      dataset become a foundational skill to change this homeless crisis? 
      This map shows which areas of the country are struggling the most with
      the homeless crisis as it reveals which areas have higher concentrations
@@ -18,9 +22,8 @@ chart_page_1 <- tabPanel(
      increased versus decreased in homeless populations. These trends can help
      determine which areas of the country need the most help and resources
      devoted to them to help solve this homelessness crisis.") 
-    ),
-    mainPanel(plotlyOutput("homeless_map"))
   )
+ )
 )
   
   

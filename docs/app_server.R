@@ -1,6 +1,5 @@
 
 # Load the necessary packages
-#=======
 library(dplyr)
 library(plotly)
 library(ggplot2)
@@ -8,8 +7,7 @@ library(tidyverse)
 library(stringr)
 library(shiny)
 library(viridis)
-
-#>>>>>>> c0f1b851d6a74fe0d68da18f37825c6a6d5a5c34
+library(maps)
 
 # load the dataset
 dataset <- "data/homelessness-2007-2016.csv"
@@ -59,12 +57,7 @@ server <- function(input, output) {
     ggplotly(map)
   })
   
-  # Dinah's chart
-#<<<<<<< HEAD
-  
   #Dinah's chart
-#=======
-# >>>>>>> c0f1b851d6a74fe0d68da18f37825c6a6d5a5c34
  output$graph <- renderPlot({
   # calculating the sum of sheltered homeless individuals and sheltered
   # homeless people in families of different states
