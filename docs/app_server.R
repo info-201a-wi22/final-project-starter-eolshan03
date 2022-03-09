@@ -127,7 +127,7 @@ server <- function(input, output) {
     # other line representing the national populations
     ggplot(data = us_tot) +
       geom_line(
-        mapping = aes(x = Year, y = tots, color = tot_type),
+        mapping = aes(x = Year, y = Population, color = Type),
         size = input$line_slider
       ) +
       scale_y_continuous(labels = scales::comma) +
