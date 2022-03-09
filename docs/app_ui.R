@@ -8,7 +8,7 @@ source("docs/report.R")
 # **Samira's Page 3 Stuff Below**
 chart_page_1 <- tabPanel(
   "Homelessness Map",
-  h2(""), 
+  h1("-"), 
   sidebarLayout(
     sidebarPanel(
       selectInput("year_choice", "Choose a Year", c("2018", "2016", "2015", 
@@ -17,16 +17,17 @@ chart_page_1 <- tabPanel(
     
     ),
     mainPanel(
+      h2("Homelessness Map"),
       plotlyOutput("homeless_map"),
-    h4(strong("Map Information")),
-    p("This map helps to answer our research question: How can this 
-     dataset become a foundational skill to change this homeless crisis? 
-     This map shows which areas of the country are struggling the most with
-     the homeless crisis as it reveals which areas have higher concentrations
-     of homeless individuals. It also reveals which areas of the country have
-     increased versus decreased in homeless populations. These trends can help
-     determine which areas of the country need the most help and resources
-     devoted to them to help solve this homelessness crisis.") 
+      h4(strong("Map Information")),
+      p("This map helps to answer our research question: How can this 
+       dataset become a foundational skill to change this homeless crisis? 
+       This map shows which areas of the country are struggling the most with
+       the homeless crisis as it reveals which areas have higher concentrations
+       of homeless individuals. It also reveals which areas of the country have
+       increased versus decreased in homeless populations. These trends can help
+       determine which areas of the country need the most help and resources
+       devoted to them to help solve this homelessness crisis.") 
   )
  )
 )
@@ -66,7 +67,7 @@ change_thickness <- sliderInput(
 
 chart_page_3 <- tabPanel(
   "Line Chart",
-  h1(""),
+  h1("-"),
   sidebarLayout(
     sidebarPanel(
       h4(strong("Graph Customization")),
@@ -102,8 +103,8 @@ chart_page_3 <- tabPanel(
 # Dinah's page 
 chart_page_2 <- tabPanel(
   "Bar Chart",
+  h1("-"),
   # lets users change the homeless count (y-axis),
-  h4("Bar Chart"),
   sidebarLayout(
     sidebarPanel(
       sliderInput(
@@ -139,6 +140,7 @@ chart_page_2 <- tabPanel(
 
 intro <- tabPanel(
   "Introduction",
+  h1("-"),
   h1("Introduction"),
   img(src = "hand-heart.jpg",
       width = "1080px"

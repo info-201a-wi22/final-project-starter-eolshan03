@@ -2,7 +2,8 @@ library(shiny)
 library(htmltools)
 summary <- tabPanel(
   "Summary",
-  h4("Summary"),
+  h1("-"),
+  h1("Summary"),
   p(paste("From the graph and the other explorations of data we’ve done over",
           "the course of the project, we’ve learned a lot about homelessness",
           "across the US.")),
