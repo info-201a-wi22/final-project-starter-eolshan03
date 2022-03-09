@@ -2,7 +2,7 @@ library(shiny)
 
 report <- tabPanel(
   "Report",
-  h1("Report"),
+  title = "Report",
   p("INFO-201: Technical Foundations of Informatics, Winter 2022 | The
     Information School, University of Washington"),
   p("Authors: Samira Shirazy, Rebecca Chan, Dinah Bahta and Emily Olshan"),

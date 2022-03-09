@@ -8,6 +8,7 @@ library(stringr)
 library(shiny)
 library(viridis)
 library(maps)
+library(mapproj)
 
 # load the dataset
 dataset <- "data/homelessness-2007-2016.csv"
