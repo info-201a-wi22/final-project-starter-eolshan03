@@ -1,7 +1,5 @@
 
 # Load the necessary packages
-<<<<<<< HEAD
-<<<<<<< HEAD
 library("dplyr")
 library("plotly")
 library("ggplot2")
@@ -9,19 +7,6 @@ library("tidyverse")
 library("stringr")
 library("maps")
 library("viridis")
-=======
-=======
->>>>>>> 2ec974bae999e30ebf2c93d11375241242a44e0b
-library(dplyr)
-library(plotly)
-library(ggplot2)
-library(tidyverse)
-library(stringr)
-library(shiny)
-<<<<<<< HEAD
->>>>>>> 2ec974bae999e30ebf2c93d11375241242a44e0b
-=======
->>>>>>> 2ec974bae999e30ebf2c93d11375241242a44e0b
 
 # load the dataset
 dataset <- "homelessness-2007-2016.csv"
@@ -29,8 +14,6 @@ homelessness_2007_2016 <- read.csv(dataset, header = TRUE, stringsAsFactors = FA
 
 server <- function(input, output) {
   # Emily's chart
-<<<<<<< HEAD
-<<<<<<< HEAD
   output$homeless_map <- renderPlotly({
     coc <- combined %>%
       select(coc_cat, state, year, value) %>%
@@ -73,9 +56,6 @@ server <- function(input, output) {
   
   # Dinah's chart
   
-=======
-=======
->>>>>>> 2ec974bae999e30ebf2c93d11375241242a44e0b
   #Dinah's chart
  output$graph <- renderPlot({
   # calculating the sum of sheltered homeless individuals and sheltered
@@ -103,10 +83,7 @@ server <- function(input, output) {
     return(the_graph)
     }
     )
-<<<<<<< HEAD
->>>>>>> 2ec974bae999e30ebf2c93d11375241242a44e0b
-=======
->>>>>>> 2ec974bae999e30ebf2c93d11375241242a44e0b
+
   # Samira's chart
   output$state_vs_national_homelessness_pop <- renderPlotly({
     # calculate the state homelessness totals by year
