@@ -134,10 +134,30 @@ chart_page_2 <- tabPanel(
   )
 )
 
+intro <- tabPanel(
+  "Introduction",
+  h1("Introduction"),
+  img(src = "hand-heart.jpg",
+      width = "1080px"
+      ), 
+  p("On this webpage, we are analyzing the different statistics of homelessness
+    in different states. Our analysis we will be uncovering the trends between
+    homelessness in different states and why they changed overtime. We hope to
+    use these trends to discuss how we can make a significant change in our
+    housing system. With each of the charts on the following tabs, we aim to
+    answer questions about trends across states, times and situations of
+    homelessness. We are using data on homelessness from a variety of
+    government organizations that track the populations in each county.
+    More information on the data and our project can be found on the report
+    page."),
+  p(""),
+  p("Photo by Kelly Sikkema on Unsplash")
+  )
+
 ui <- navbarPage(
   title = "Homelessness in the US",
   position = "fixed-top",
-  # intro,
+  intro,
   chart_page_1,
   chart_page_2,
   chart_page_3,
