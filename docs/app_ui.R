@@ -4,7 +4,7 @@ library(plotly)
 # **Samira's Page 3 Stuff Below**
 chart_page_1 <- tabPanel(
   "Homelessness Map",
-  h1(""), 
+  h2(""), 
   sidebarLayout(
     sidebarPanel(
       selectInput("year_choice", "Choose a Year", c("2018", "2016", "2015", 
