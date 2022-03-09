@@ -1,5 +1,6 @@
 
 # Load the necessary packages
+<<<<<<< HEAD
 library("dplyr")
 library("plotly")
 library("ggplot2")
@@ -7,10 +8,20 @@ library("tidyverse")
 library("stringr")
 library("maps")
 library("viridis")
+=======
+library(dplyr)
+library(plotly)
+library(ggplot2)
+library(tidyverse)
+library(stringr)
+library(shiny)
+>>>>>>> c0f1b851d6a74fe0d68da18f37825c6a6d5a5c34
 
 # load the dataset
-dataset <- "homelessness-2007-2016.csv"
+dataset <- "data/homelessness-2007-2016.csv"
 homelessness_2007_2016 <- read.csv(dataset, header = TRUE, stringsAsFactors = FALSE)
+combined <- read.csv("data/combined_homeless.csv",
+                     stringsAsFactors = FALSE)
 
 server <- function(input, output) {
   # Emily's chart
@@ -55,12 +66,15 @@ server <- function(input, output) {
   })
   
   # Dinah's chart
+<<<<<<< HEAD
   
   #Dinah's chart
+=======
+>>>>>>> c0f1b851d6a74fe0d68da18f37825c6a6d5a5c34
  output$graph <- renderPlot({
   # calculating the sum of sheltered homeless individuals and sheltered
   # homeless people in families of different states
-  the_homeless <- homelessness %>%
+  the_homeless <- homelessness_2007_2016 %>%
     select(Measures,State,Count)%>%
     filter(State == input$State) %>%
     group_by(State, Measures) %>%
