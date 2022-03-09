@@ -1,6 +1,9 @@
 library(shiny)
 library(plotly)
 
+source("docs/summary-3.R")
+source("docs/report.R")
+
 # **Samira's Page 3 Stuff Below**
 chart_page_1 <- tabPanel(
   "Homelessness Map",
@@ -137,7 +140,7 @@ ui <- navbarPage(
   # intro,
   chart_page_1,
   chart_page_2,
-  chart_page_3
-  # summary,
-  # report
+  chart_page_3,
+  summary,
+  report
 )
