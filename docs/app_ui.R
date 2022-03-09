@@ -18,6 +18,7 @@ chart_page_1 <- tabPanel(
     ),
     mainPanel(
       plotlyOutput("homeless_map"),
+    h4(strong("Map Information")),
     p("This map helps to answer our research question: How can this 
      dataset become a foundational skill to change this homeless crisis? 
      This map shows which areas of the country are struggling the most with
@@ -74,8 +75,11 @@ chart_page_3 <- tabPanel(
       change_thickness
     ),
     mainPanel(
-      h5(strong("About the Graph")),
-      p("Below is a line chart that shows the total homelessness population in
+    
+      h3(strong("Graph")),
+      plotlyOutput("state_vs_national_homelessness_pop"),
+      h4(strong("About the Graph")),
+      p("Above is a line chart that shows the total homelessness population in
         the United States and the total homelessness population in a state that
         the user may choose. The states that can be chosen are any of the 50
         states in the U.S. as well as D.C., Puerto Rico and Guam. The user may
@@ -91,8 +95,6 @@ chart_page_3 <- tabPanel(
         lines. The graph makes it easy to compare this by looking at the slope
         of each line. This analysis could lead to further research into why they
         aren't the same-if there are differences in the slopes."),
-      h3(strong("Graph")),
-      plotlyOutput("state_vs_national_homelessness_pop")
     )
   )
 )
@@ -118,9 +120,9 @@ chart_page_2 <- tabPanel(
     ),
     mainPanel(
       # the bar chart 
-      h3("Bar Chart Visualization"),
+      h3(strong("Bar Chart Visualization")),
       plotOutput("graph"),
-      h4("Chart Information"),
+      h4(strong("Chart Information")),
       p("My dodge bar chart shows the total for sheltered homeless individuals and
         the total of sheltered homeless people in families. I choose to focus on the states 
         Alabama, Florida, Washington, New York, Texas, and California. In the chart, 
@@ -135,10 +137,31 @@ chart_page_2 <- tabPanel(
   )
 )
 
+intro <- tabPanel(
+  "Introduction",
+  h1("Introduction"),
+  img(src = "hand-heart.jpg",
+      width = "1080px"
+      ), 
+  h4(strong("Website Information")),
+  p("On this webpage, we are analyzing the different statistics of homelessness
+    in different states. Our analysis we will be uncovering the trends between
+    homelessness in different states and why they changed overtime. We hope to
+    use these trends to discuss how we can make a significant change in our
+    housing system. With each of the charts on the following tabs, we aim to
+    answer questions about trends across states, times and situations of
+    homelessness. We are using data on homelessness from a variety of
+    government organizations that track the populations in each county.
+    More information on the data and our project can be found on the report
+    page."),
+  p(""),
+  p("Photo by Kelly Sikkema on Unsplash")
+  )
+
 ui <- navbarPage(
   title = "Homelessness in the US",
   position = "fixed-top",
-  # intro,
+  intro,
   chart_page_1,
   chart_page_2,
   chart_page_3,
